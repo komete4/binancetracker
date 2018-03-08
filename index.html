@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Binance Donation Tracker</title>
+		<link rel="icon" href="favicon.png">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>	
+        <script src="tracker.js"></script>
+        <style>
+            .exLink{
+                color: black;
+            }
+            .miningImg{
+                width: 24px;
+            }
+            .totalText{
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body onLoad="start()" style="padding-top:2rem">
+        <div class="container">
+		    <div class="text-center"><img class="text-center" src="logo.png" style="width: 50%;"></div>
+            <h1 class="text-center">Binance Donation Tracker</h1>
+            <div class="row">
+                <p>This page tracks the progress of funding for Binance.  The listing fee can be anywhere from 10 - 25 BTC due to the voting process involved (voting with BNB token).  This tracker is set to the max of 25 BTC.<br>
+                <br>BTCZ/BTC exchange rate is an estimate based on the weighted average by Coinmarketcap. The values on this page are automatically updated every 5 minutes.</p>
+            </div>
+            <div class="row">
+              <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Exchange</th>
+                            <th scope="col">Currency</th>
+                            <th scope="col">Address</th>
+                            <th scope="col" colspan="3">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="5"><a href="https://www.binance.com/" target="_blank" class="exLink">Binance</a></th>
+                            <td>BTCZ</td>
+                            <td>t1L2h7WyVsxEvbw1acefwXWBQWYReQnN7MF</td>
+                            <td id="btczBalance1">0</td>
+                            <td id="btczBalance1_toBtc">0</td>
+                            <td><a href="https://equipool.1ds.us/workers/t1L2h7WyVsxEvbw1acefwXWBQWYReQnN7MF" target="_blank"><img class="miningImg" src="mining.png"></a></td>
+                        </tr>
+						
+					    <tr>
+                            <td>BTC</td>
+                            <td>14deH7yqwmV8gcPHzLwUXmRSnZ1gQYK1Ka</td>
+                            <td id="btcBalance1">0</td>
+                            <td id="btcBalance1_toBtc">0</td>
+                            <td></td>
+                        </tr>
+					    <tr>
+                            <td>LTC</td>
+                            <td>LPprE3sC5oTjpEZM5AcjTKzZdRf7sLgSGo</td>
+                            <td id="ltcBalance1">0</td>
+                            <td id="ltcBalance1_toBtc">0</td>
+                            <td></td>
+                        </tr>
+					    <tr>
+                            <td>ETH</td>
+                            <td>0xBAd0dC6003D3F6a7222c0A1Cf6228b364BB011C9</td>
+                            <td id="ethBalance1">0</td>
+                            <td id="ethBalance1_toBtc">0</td>
+                            <td></td>
+                        </tr>						
+					    <tr>
+                            <td>ZEC</td>
+                            <td>t1SCNiZ2qNv3Y97CMLgpkFFzrPgeAsZzmrb</td>
+                            <td id="zecBalance1">0</td>
+                            <td id="zecBalance1_toBtc">0</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="align-middle">
+                                <div class="progress">
+                                    <div id="progressBar1" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </td>
+                            <td id="totalBalance1" class="totalText">0</td>
+                            <td id="progressPercent1">0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p id="statsTxt" class="text-center"></p>
+
+            <p class="text-center">made by <a href="https://github.com/hodler95" target="_blank">hodler95 & cryptorex</a></p>
+        </div>
+    </body>
+</html>
